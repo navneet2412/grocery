@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterPageComponent implements OnInit {
 
-  cities = ['Delhi', 'Mumbai', 'Pune'];
+
 
   userData = new User();
 

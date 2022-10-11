@@ -1,6 +1,6 @@
 <div class="container">
   <a routerLink="/">
-    <h2>Grocery App</h2>
+    <h2>Book Store</h2>
   </a>
 </div>
 
@@ -16,13 +16,33 @@
           <hr>
           <h2>{{ userData | json }}</h2> -->
           <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName"> Name</label>
             <input
               type="text"
               id="firstName"
               class="form-control"
               name="firstName"
-              [(ngModel)]="userData.firstName"
+              [(ngModel)]="userData.Name"
+              #firstName="ngModel"
+              required
+              [class.is-invalid]="firstName.invalid && firstName.touched"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="firstName.valid || firstName.untouched"
+              >This is required field</small
+            >
+            <!-- <h2>{{ firstName.untouched }}</h2> -->
+          </div>
+
+          <div class="form-group">
+            <label for="firstName"> Username</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              name="firstName"
+              [(ngModel)]="userData.Name"
               #firstName="ngModel"
               required
               [class.is-invalid]="firstName.invalid && firstName.touched"
@@ -41,7 +61,7 @@
               type="text"
               class="form-control"
               name="email"
-              [(ngModel)]="userData.email"
+              [(ngModel)]="userData.Email"
               required
               #email="ngModel"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -65,7 +85,7 @@
               [class.is-invalid]="mobile.invalid && mobile.touched"
               class="form-control"
               name="mobile"
-              [(ngModel)]="userData.mobile"
+              [(ngModel)]="userData.Mobile"
               required
               pattern="^\d{10}$"
             />
@@ -85,7 +105,7 @@
               type="password"
               class="form-control"
               name="password"
-              [(ngModel)]="userData.password"
+              [(ngModel)]="userData.Password"
               #password="ngModel"
               required
               minlength="6"
@@ -101,52 +121,7 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="">City</label>
-            <select
-              class="form-control"
-              [(ngModel)]="userData.city"
-              name="city"
-            >
-              <option *ngFor="let city of cities">{{ city }}</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="">Gender</label>
-            <div class="form-check">
-              <input
-                type="radio"
-                name="gender"
-                class="form-check-input"
-                value="male"
-                [(ngModel)]="userData.gender"
-              />
-              <label for="" class="form-check-label">Male</label>
-            </div>
-            <div class="form-check">
-              <input
-                type="radio"
-                name="gender"
-                class="form-check-input"
-                value="female"
-                [(ngModel)]="userData.gender"
-              />
-              <label for="" class="form-check-label">Female</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                [(ngModel)]="userData.subscribe"
-                name="subscribe"
-              />
-              <label for="" class="form-check-label">Subscribe</label>
-            </div>
-          </div>
+          
 
           <input
             type="submit"

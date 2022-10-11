@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
+// import { DataService } from 'src/app/services/data.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,14 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailPageComponent implements OnInit {
   pid:any;
   product: any;
-
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) {
+  
+  // constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) {
+  //   this.pid  = this.activatedRoute.snapshot.paramMap.get('pid');
+  // }
+  constructor( private activatedRoute: ActivatedRoute) {
     this.pid  = this.activatedRoute.snapshot.paramMap.get('pid');
   }
 
   ngOnInit(): void {
-    this.dataService.getProductById(this.pid).subscribe((response: any) => {
-      this.product = response.data;
-    });
+    // this.dataService.getProductById(this.pid).subscribe((response: any) => {
+    //   this.product = response.data;
+    // });
   }
 }

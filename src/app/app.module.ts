@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MyordersComponent } from './components/myorders/myorders.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     PageNotFoundComponent,
     RegisterPageComponent,
     LoginPageComponent,
+    CartComponent,
+    MyordersComponent,
 
     
   ],
